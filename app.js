@@ -13,8 +13,6 @@ const calculate = () => {
     .then((data) => {
       const currency1 = currencyOne.value;
       const currency2 = currencyTwo.value;
-      console.log(currency1);
-      console.log(currency2);
 
       const rate = data.rates[currency2];
       rateInfo.textContent = `1 ${currency1} = ${rate.toFixed(4)} ${currency2}`;
@@ -24,5 +22,6 @@ const calculate = () => {
 
 currencyOne.addEventListener("change", calculate);
 currencyTwo.addEventListener("change", calculate);
+amountOne.addEventListener("input", calculate);
 
 calculate();
